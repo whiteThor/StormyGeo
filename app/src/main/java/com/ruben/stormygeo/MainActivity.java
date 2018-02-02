@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         currentWeather.setPrecipType(currently.getString("precipType"));
         currentWeather.setApparentTemperature(currently.getLong("apparentTemperature"));
         currentWeather.setUvIndex(currently.getLong("uvIndex"));
+        currentWeather.setTimeZone(currently.getString("timezone"));
 
         return currentWeather;
     }

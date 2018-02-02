@@ -1,5 +1,9 @@
 package com.ruben.stormygeo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * Created by Luis Antonio Miranda on 1/02/2018.
  */
@@ -15,6 +19,7 @@ public class CurrentWeather {
     private float mUvIndex;
     private float mApparentTemperature;
     private String mPrecipType;
+    private String mTimeZone;
 
     public String getIcon() {
         return mIcon;
@@ -22,6 +27,38 @@ public class CurrentWeather {
 
     public void setIcon(String icon) {
         mIcon = icon;
+    }
+/*
+, , , , , wind, fog, cloudy, partly-cloudy-day, or
+* */
+
+    public int getIconId() {
+        int mIconId = 0;
+
+        if (mIcon.equals("clear-day")) {
+            mIconId = R.drawable.clear_day;
+        } else if (mIcon.equals("clear-night")) {
+            mIconId = R.drawable.clear_night;
+        } else if (mIcon.equals("rain")) {
+            mIconId = R.drawable.rain;
+        } else if (mIcon.equals("snow")) {
+            mIconId = R.drawable.snow;
+        } else if (mIcon.equals("sleet")) {
+            mIconId = R.drawable.sleet;
+        } else if (mIcon.equals("wind")) {
+            mIconId = R.drawable.wind;
+        } else if (mIcon.equals("fog")) {
+            mIconId = R.drawable.fog;
+        } else if (mIcon.equals("cloudy")) {
+            mIconId = R.drawable.cloudy;
+        } else if (mIcon.equals("partly-cloudy-day")) {
+            mIconId = R.drawable.partly_cloudy;
+        } else if (mIcon.equals("partly-cloudy-nigh")) {
+            mIconId = R.drawable.cloudy_night;
+        }
+
+        return mIconId;
+
     }
 
     public long getTime() {
@@ -86,5 +123,23 @@ public class CurrentWeather {
 
     public void setPrecipType(String precipType) {
         mPrecipType = precipType;
+    }
+
+    public String getFormattedTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("h:mm a");
+        dateFormat.setTimeZone(TimeZone.getTimeZone(getTimeZone()));
+        Date date = new Date(getTime() * 1000);
+        String timeString = dateFormat.format(date);
+
+        return timeString;
+
+    }
+
+    public String getTimeZone() {
+        return mTimeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        mTimeZone = timeZone;
     }
 }
