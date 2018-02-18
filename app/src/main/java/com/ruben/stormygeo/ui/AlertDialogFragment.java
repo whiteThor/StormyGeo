@@ -1,10 +1,12 @@
-package com.ruben.stormygeo;
+package com.ruben.stormygeo.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+
+import com.ruben.stormygeo.R;
 
 /**
  * Created by Luis Antonio Miranda on 31/01/2018.

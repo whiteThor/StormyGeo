@@ -1,4 +1,6 @@
-package com.ruben.stormygeo;
+package com.ruben.stormygeo.weather;
+
+import com.ruben.stormygeo.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.TimeZone;
  * Created by Luis Antonio Miranda on 1/02/2018.
  */
 
-public class CurrentWeather {
+public class Current {
 
     private String mIcon;
     private long mTime;
@@ -70,7 +72,10 @@ public class CurrentWeather {
     }
 
     public int getTemperature() {
-        return (int) Math.round(mTemperature);
+
+        int temperatureCentigrade = (int) Math.round((mTemperature - 32) * 5 / 9);
+
+        return temperatureCentigrade;
     }
 
     public void setTemperature(double temperature) {

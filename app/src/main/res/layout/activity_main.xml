@@ -5,8 +5,8 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fffc970b"
-    tools:context="com.ruben.stormygeo.MainActivity">
+    android:background="@drawable/bg_gradient"
+    tools:context="com.ruben.stormygeo.ui.MainActivity">
 
     <TextView
         android:id="@+id/temperatureLabel"
@@ -146,5 +146,34 @@
         android:layout_alignBottom="@+id/refreshImageView"
         android:layout_alignTop="@+id/refreshImageView"
         android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/temperatureLabel"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/hourlyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#40ffffff"
+            android:text="HOURLY"
+            android:textColor="#FFFFFFFF" />
+
+        <Button
+            android:id="@+id/dailyButon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#40ffffff"
+            android:text="7 DAY"
+            android:textColor="#ffffffff"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
 
 </RelativeLayout>
