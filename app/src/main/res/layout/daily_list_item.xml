@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#ffaa00">
+
+    <ImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/bg_temperature" />
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/circleImageView"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        app:srcCompat="@drawable/clear_day" />
+
+    <TextView
+        android:id="@+id/dayNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iconImageView"
+        android:layout_toEndOf="@+id/iconImageView"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        tools:text="Wednesday" />
+</RelativeLayout>
