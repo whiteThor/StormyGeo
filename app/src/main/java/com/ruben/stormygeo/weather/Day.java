@@ -37,7 +37,9 @@ public class Day implements Parcelable {
         mIcom = in.readString();
         mTimeZone = in.readString();
     }
+    public Day() {
 
+    }
     public long getTime() {
         return mTime;
     }
