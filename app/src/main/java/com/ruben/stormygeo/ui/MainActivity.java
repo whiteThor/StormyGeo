@@ -38,6 +38,9 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     public static final String DAILY_FORECAST = "DAILY_FORECAST";
+    public static final String HOURLY_FORECAST = "HOURLY_FORECAST";
+
+    public static final String DAILY_FORECAST_LOCATION = "DAILY_FORECAST_LOCATION";
     public Forecast mForecast;
     @BindView(R.id.timeLabel)
     TextView mTimeLabel;
@@ -270,7 +273,18 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.dailyButon)
     public void startDailyActivity(View view) {
         Intent intent = new Intent(this, DailyForecastActivity.class);
-        intent.putExtra(DAILY_FORECAST, mForecast.getDailyForecast());
+        Bundle extras = new Bundle();
+        extras.putString("DAILY_FORECAST_LOCATION",  mForecast.getCurrent().getTimeZone());
+        extras.putParcelableArray(DAILY_FORECAST, mForecast.getDailyForecast() );
+        intent.putExtras(extras);
+        //intent.putExtra(DAILY_FORECAST, mForecast.getDailyForecast());
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.hourlyButton)
+    public void startHourlyActivity(View view){
+        Intent intent = new Intent(this, HourlyForecastActivity.class);
+        intent.putExtra(HOURLY_FORECAST, mForecast.getHourlyForecast());
         startActivity(intent);
     }
 }

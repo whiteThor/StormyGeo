@@ -4,4 +4,5 @@
     <string name="error_message">There was an error, Please Try again.</string>
     <string name="error_ok">Ok</string>
     <string name="no_daily_data">there is no data to display</string>
+    <string name="title_activity_hourly_forecast">hourly_forecast</string>
 </resources>

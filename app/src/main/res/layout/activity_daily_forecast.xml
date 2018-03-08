@@ -10,10 +10,15 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/locationLabel"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        />
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/thisWeek"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 
     <TextView
         android:id="@android:id/empty"
@@ -25,5 +30,27 @@
         android:text="TextView"
         android:textColor="#ffffffff"
         tools:text="@string/no_daily_data" />
+
+    <TextView
+        android:id="@+id/thisWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="this week's weather"
+        android:textColor="#ffffffff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Bogota, CO"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
 
 </RelativeLayout>
