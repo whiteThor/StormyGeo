@@ -71,7 +71,8 @@ public class Hour implements Parcelable{
     }
 
     public int getTemperature() {
-        return (int) Math.round(mTemperature);
+        int temperatureCentigrade = (int) Math.round((mTemperature - 32) * 5 / 9);
+        return temperatureCentigrade;
     }
 
     public void setTemperature(double temperature) {

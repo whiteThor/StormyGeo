@@ -34,7 +34,7 @@ public class Forecast {
             iconId = R.drawable.cloudy;
         } else if (iconString.equals("partly-cloudy-day")) {
             iconId = R.drawable.partly_cloudy;
-        } else if (iconString.equals("partly-cloudy-nigh")) {
+        } else if (iconString.equals("partly-cloudy-night")) {
             iconId = R.drawable.cloudy_night;
         }
         return iconId;

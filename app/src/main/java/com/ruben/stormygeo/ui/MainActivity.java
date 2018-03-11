@@ -221,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
             hour.setTemperature(jsonHour.getDouble("temperature"));
             hour.setIcon(jsonHour.getString("icon"));
             hour.setTimeZome(timeZone);
+            hour.setTime(jsonHour.getLong("time"));
 
             hours[i] = hour;
 
