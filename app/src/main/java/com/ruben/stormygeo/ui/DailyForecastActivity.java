@@ -4,7 +4,10 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ruben.stormygeo.R;
 import com.ruben.stormygeo.adapters.DayAdapter;
@@ -21,6 +24,7 @@ public class DailyForecastActivity extends ListActivity {
     TextView mLocationLabel;
 
     private Day[] mDays;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,4 +43,16 @@ public class DailyForecastActivity extends ListActivity {
         setListAdapter(dayAdapter);
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        String dayOfTheWeek = mDays[position].getDayOfTheWeek() ;
+        String condition= mDays[position].getSummary();
+        String highTemperature = mDays[position].getTemperatureMax() + "";
+
+        String message = String.format("On %s the high will be %s and it will be %s", dayOfTheWeek, highTemperature,condition);
+
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
 }
